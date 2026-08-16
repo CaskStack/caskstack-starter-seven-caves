@@ -1,0 +1,17 @@
+name: Seven Caves Distillery
+author: CaskStack
+url: https://github.com/CaskStack/caskstack-starter-seven-caves
+description: "Ludicrously small batch craft spirits, cane-to-glass artisanal rums, botanical gins, and single-cask whiskeys inspired by the 7 historic sea caves of La Jolla Cove."
+version: 1.0.0
+compatibility:
+  statamic: "^5.0"
+  laravel: "^11.0"
+category: distillery
+verticals:
+  - distillery
+  - craft-spirits
+  - rum
+  - gin
+  - whiskey
+tier: starter
+price: 0
