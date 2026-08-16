@@ -48,6 +48,7 @@
         }
     </script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
     <!-- Zero-Config Native SEO & Meta Architecture -->
     <link rel="canonical" href="{{ url()->current() }}">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -58,14 +59,14 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:site_name" content="Seven Caves Distillery">
-    <meta property="og:title" content="{{ $title ?? 'Seven Caves Distillery — Ludicrously Small Batch Craft Spirits' }}">
-    <meta property="og:description" content="{{ $meta_description ?? 'Seven Caves Spirits crafts the finest cane-to-glass rums, coastal botanical gins, and grain-to-glass whiskeys in 120-bottle micro-batches in San Diego, CA.' }}">
-    <meta property="og:image" content="{{ $hero_image ?? 'https://caskstack.com/images/og-default.jpg' }}">
+    <meta property="og:title" content="{{ $title ?? "Seven Caves Distillery — Ludicrously Small Batch Craft Spirits" }}">
+    <meta property="og:description" content="{{ $meta_description ?? "Seven Caves Spirits crafts the finest cane-to-glass rums, coastal botanical gins, and grain-to-glass whiskeys in 120-bottle micro-batches in San Diego, CA." }}">
+    <meta property="og:image" content="{{ $hero_image ?? "https://caskstack.com/images/og-default.jpg" }}">
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{{ $title ?? 'Seven Caves Distillery — Ludicrously Small Batch Craft Spirits' }}">
-    <meta name="twitter:description" content="{{ $meta_description ?? 'Seven Caves Spirits crafts the finest cane-to-glass rums, coastal botanical gins, and grain-to-glass whiskeys in 120-bottle micro-batches in San Diego, CA.' }}">
+    <meta name="twitter:title" content="{{ $title ?? "Seven Caves Distillery — Ludicrously Small Batch Craft Spirits" }}">
+    <meta name="twitter:description" content="{{ $meta_description ?? "Seven Caves Spirits crafts the finest cane-to-glass rums, coastal botanical gins, and grain-to-glass whiskeys in 120-bottle micro-batches in San Diego, CA." }}">
 
     <!-- Compliance-First Data Moat Signals -->
     <meta name="caskstack:compliance" content="TTB-21-Plus-Direct-Connect">
@@ -74,11 +75,11 @@
     <!-- Structured Data (JSON-LD) Schema.org Graph -->
     <script type="application/ld+json">
 {
-    "@context": "https://schema.org",
-    "@graph": [
+    "@@context": "https://schema.org",
+    "@@graph": [
         {
-            "@type": "Organization",
-            "@id": "#organization",
+            "@@type": "Organization",
+            "@@id": "#organization",
             "name": "Seven Caves Distillery",
             "description": "Seven Caves Spirits crafts the finest cane-to-glass rums, coastal botanical gins, and grain-to-glass whiskeys in 120-bottle micro-batches in San Diego, CA.",
             "foundingDate": "2016",
@@ -89,8 +90,8 @@
             ]
         },
         {
-            "@type": "Distillery",
-            "@id": "#facility",
+            "@@type": "Distillery",
+            "@@id": "#facility",
             "name": "Seven Caves Distillery",
             "description": "Seven Caves Spirits crafts the finest cane-to-glass rums, coastal botanical gins, and grain-to-glass whiskeys in 120-bottle micro-batches in San Diego, CA.",
             "isFamilyFriendly": false,
@@ -99,7 +100,7 @@
             "paymentAccepted": "Cash, Credit Card, Apple Pay, Google Pay",
             "currenciesAccepted": "USD",
             "address": {
-                "@type": "PostalAddress",
+                "@@type": "PostalAddress",
                 "streetAddress": "8655 Production Ave, Suite C, San Diego, CA 92121",
                 "addressCountry": "US"
             },
