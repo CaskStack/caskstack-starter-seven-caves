@@ -10,7 +10,7 @@
                 {{ $b['eyebrow'] ?? 'The Legend of the 7 Caves' }}
             </span>
             <h2 class="font-garamond text-3xl sm:text-5xl font-bold text-seven-sand leading-tight">
-                {{ $b['headline'] ?? 'Forged by the Pacific Ocean. Inspired by La Jolla's 7 Sea Caves.' }}
+                {{ $b['headline'] ?? "Forged by the Pacific Ocean. Inspired by La Jolla's 7 Sea Caves." }}
             </h2>
             <div class="space-y-4 text-seven-muted text-base leading-relaxed pt-2">
                 <p>{{ $b['story_p1'] ?? '' }}</p>
