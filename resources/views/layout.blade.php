@@ -113,6 +113,11 @@
 </head>
 <body class="flex min-h-full flex-col font-karla bg-[#0C1821] text-[#F7F4EE] antialiased" x-data="{ mobileMenuOpen: false, cartOpen: false, cartCount: 0 }">
 
+    <!-- WCAG 2.4.1: Bypass Blocks Skip Link -->
+    <a href="#storefront-main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-50 focus:px-4 focus:py-2 focus:bg-amber-400 focus:text-black focus:font-bold focus:rounded-xl focus:shadow-2xl focus:outline-none">
+        Skip to content
+    </a>
+
     <!-- Top Announcement Bar -->
     <div class="bg-gradient-to-r from-seven-surface via-seven-teal/40 to-seven-surface border-b border-seven-border px-4 py-2 text-center text-xs font-mono tracking-wider flex items-center justify-center gap-3">
         <span class="inline-block w-2 h-2 rounded-full bg-seven-copper animate-pulse"></span>
@@ -121,7 +126,7 @@
     </div>
 
     <!-- Main Navigation Header -->
-    <header class="sticky top-0 z-40 w-full border-b border-seven-border bg-[#0C1821]/95 backdrop-blur-md transition-all">
+    <header role="banner" class="sticky top-0 z-40 w-full border-b border-seven-border bg-[#0C1821]/95 backdrop-blur-md transition-all">
         <div class="max-w-7xl mx-auto flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8">
             
             <!-- Brand Logo -->
@@ -140,7 +145,7 @@
             </a>
 
             <!-- Desktop Navigation Links -->
-            <nav class="hidden md:flex items-center space-x-8 text-xs font-mono uppercase tracking-widest text-seven-muted">
+            <nav aria-label="Main Navigation" class="hidden md:flex items-center space-x-8 text-xs font-mono uppercase tracking-widest text-seven-muted">
                 <a href="#about" class="hover:text-seven-copper transition">The 7 Caves</a>
                 <a href="#spirits-matrix" class="hover:text-seven-copper transition">Spirits</a>
                 <a href="#spirits-matrix" class="hover:text-seven-copper transition">Rums & Gins</a>
@@ -155,13 +160,13 @@
                     <span>Book Tasting</span>
                 </a>
 
-                <button @click="cartOpen = true" type="button" class="relative p-2 text-seven-sand hover:text-seven-copper transition" aria-label="View Cart">
+                <button @click="cartOpen = true" type="button" class="relative p-2 text-seven-sand hover:text-seven-copper transition cursor-pointer" aria-label="Open Cellar Cart">
                     <i class="fa-solid fa-whiskey-glass text-lg"></i>
                     <span x-show="cartCount > 0" x-text="cartCount" class="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-seven-copper text-zinc-950 font-mono text-[9px] font-extrabold flex items-center justify-center">0</span>
                 </button>
 
                 <!-- Mobile Menu Trigger -->
-                <button @click="mobileMenuOpen = !mobileMenuOpen" type="button" class="md:hidden p-2 text-seven-sand hover:text-seven-copper">
+                <button @click="mobileMenuOpen = !mobileMenuOpen" type="button" aria-label="Toggle Navigation Menu" class="md:hidden p-2 text-seven-sand hover:text-seven-copper cursor-pointer">
                     <i class="fa-solid fa-bars text-xl"></i>
                 </button>
             </div>
@@ -177,13 +182,13 @@
     </header>
 
     <!-- Main Content Injection -->
-    <main class="flex-1">
+    <main id="storefront-main-content" tabindex="-1" role="main" class="flex-1">
         @yield('content')
         {{ $slot ?? '' }}
     </main>
 
     <!-- Global Footer -->
-    <footer class="border-t border-seven-border bg-seven-dark pt-16 pb-12 text-seven-muted text-xs">
+    <footer role="contentinfo" class="border-t border-seven-border bg-seven-dark pt-16 pb-12 text-seven-muted text-xs">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-10">
             <div class="space-y-4">
                 <div class="flex items-center gap-3">
@@ -194,8 +199,8 @@
                     {{ $tagline ?? 'Ludicrously Small Batch Craft Spirits. Pure grain-to-glass and cane-to-glass distillation in San Diego, CA.' }}
                 </p>
                 <div class="flex items-center gap-4 text-sm text-seven-sand">
-                    <a href="https://instagram.com/sevencaves" target="_blank" rel="noopener" class="hover:text-seven-copper transition"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://facebook.com/7Caves" target="_blank" rel="noopener" class="hover:text-seven-copper transition"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://instagram.com/sevencaves" target="_blank" rel="noopener" class="hover:text-seven-copper transition" aria-label="Seven Caves on Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+                    <a href="https://facebook.com/7Caves" target="_blank" rel="noopener" class="hover:text-seven-copper transition" aria-label="Seven Caves on Facebook"><i class="fa-brands fa-facebook" aria-hidden="true"></i></a>
                 </div>
             </div>
 
